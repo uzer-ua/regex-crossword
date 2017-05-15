@@ -1,0 +1,188 @@
+html, body, *{
+	margin:0;
+	padding:0;
+}
+#map{
+	margin-top:260px;
+	text-align:center;
+}
+
+.hexcell span {
+	position:relative;
+	width:100%;
+	height:100%;
+	display:inline-block;
+	visibility: hidden;
+	overflow: hidden;
+	vertical-align: middle;
+	text-align: center;
+}
+.hexcell {
+	visibility: hidden;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: 48px;
+	height: 70px;
+	margin-top:-30px;
+	/*margin: -55px -1px;*/
+	-webkit-transform: rotate(120deg);
+	   -moz-transform: rotate(120deg);
+	    -ms-transform: rotate(120deg);
+	     -o-transform: rotate(120deg);
+	        transform: rotate(120deg);
+}
+.hexcell.last{
+	width:50px;
+}
+.hexcell > span {
+	-webkit-transform: rotate(-60deg);
+	   -moz-transform: rotate(-60deg);
+	    -ms-transform: rotate(-60deg);
+	     -o-transform: rotate(-60deg);
+	        transform: rotate(-60deg);
+}
+.hexcell > span > span {
+	-webkit-transform: rotate(-60deg);
+	   -moz-transform: rotate(-60deg);
+	    -ms-transform: rotate(-60deg);
+	     -o-transform: rotate(-60deg);
+	        transform: rotate(-60deg);
+}
+.hexcell > span > span > span{	/*1st border*/
+	border: 2px solid #000000;
+	height:66px;
+	width:44px;
+	-webkit-transform: rotate(120deg);
+	   -moz-transform: rotate(120deg);
+	    -ms-transform: rotate(120deg);
+	     -o-transform: rotate(120deg);
+	        transform: rotate(120deg);
+	visibility:visible;
+}
+.hexcell.last > span > span > span{	/*1st border*/
+	width: 46px;
+	visibility:visible;
+}
+.hexcell > span > span > span > span{	/*2nd border*/
+	border: 2px solid #000000;
+	height:76px;
+	width:44px;
+	top:-2px;
+	left:7px;
+	-webkit-transform: rotate(-60deg);
+	   -moz-transform: rotate(-60deg);
+	    -ms-transform: rotate(-60deg);
+	     -o-transform: rotate(-60deg);
+	        transform: rotate(-60deg);
+	visibility:visible;
+}
+.hexcell.last > span > span > span > span{	/*2nd border*/
+	width: 46px;
+	visibility:visible;
+}
+.hexcell > span > span > span > span > span.input{	/*3rd border*/
+	border: 2px solid #000000;
+	border-right:0;
+	height:51px;
+	width:46px;
+	top:-8px;
+	left:-3px;
+	position:relative;
+	-webkit-transform: rotate(-60deg);
+	   -moz-transform: rotate(-60deg);
+	    -ms-transform: rotate(-60deg);
+	     -o-transform: rotate(-60deg);
+	        transform: rotate(-60deg);
+	visibility:visible;
+	font-size:34px;
+	padding-top:15px;
+}
+.hexcell.last > span > span > span > span > span.input{	/*3rd border*/
+	border-right: 2px solid #000000;
+	visibility:visible;
+}
+span.input.active{
+	background-color:#CCCCCC;
+}
+.title{
+	position:absolute;
+	z-index:2;
+	font-size:22px;
+	text-align:right;
+	width:260px;
+	font-family:Arial;
+	font-weight:bold;
+	/*-webkit-transition: opacity 200ms linear, -webkit-transform 500ms linear;
+	-moz-transition: opacity 200ms linear, -moz-transform 500ms linear;
+	-o-transition: opacity 200ms linear, -o-transform 500ms linear;
+	transition: opacity 200ms linear, tranform 500ms linear;*/
+}
+.title0{
+	position:absolute;
+	-webkit-transform: translate(-265px,-10px);
+	   -moz-transform: translate(-265px,-10px);
+	    -ms-transform: translate(-265px,-10px);
+	     -o-transform: translate(-265px,-10px);
+	        transform: translate(-265px,-10px);
+}
+.title1{
+	-webkit-transform: translate(-28px,-145px) rotate(120deg);
+	   -moz-transform: translate(-28px,-145px) rotate(120deg);
+	    -ms-transform: translate(-28px,-145px) rotate(120deg);
+	     -o-transform: translate(-28px,-145px) rotate(120deg);
+	        transform: translate(-28px,-145px) rotate(120deg);
+}
+.title1.highlight{
+	-webkit-transform: translate(40px,-50px);
+	   -moz-transform: translate(40px,-50px);
+	    -ms-transform: translate(40px,-50px);
+	     -o-transform: translate(40px,-50px);
+	        transform: translate(40px,-50px);
+	text-align:left;
+}
+.title1.highlight:before{
+	/*content:"'";
+	font-family:"Wingdings 3";
+	margin-right:5px;
+	font-weight:normal;
+	color:red;*/
+}
+.title2{
+	-webkit-transform: translate(-20px,130px) rotate(-120deg);
+	   -moz-transform: translate(-20px,130px) rotate(-120deg);
+	    -ms-transform: translate(-20px,130px) rotate(-120deg);
+	     -o-transform: translate(-20px,130px) rotate(-120deg);
+	        transform: translate(-20px,130px) rotate(-120deg);
+}
+.title2.highlight{
+	-webkit-transform: translate(40px,35px);
+	   -moz-transform: translate(40px,35px);
+	    -ms-transform: translate(40px,35px);
+	     -o-transform: translate(40px,35px);
+	        transform: translate(40px,35px);
+	text-align:left;
+}
+.title2.highlight:before{
+	/*content:'%';
+	font-family:"Wingdings 3";
+	margin-right:5px;
+	font-weight:normal;
+	color:red;*/
+}
+.title.correct{
+	color:green;
+}
+.title.wrong{
+	color:red;
+}
+.title.hidden {
+	opacity:0.1;
+}
+#timer{
+	font-size:34px;
+	position:absolute;
+	left:20px;
+	top:20px;
+}
